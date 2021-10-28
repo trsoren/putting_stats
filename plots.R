@@ -51,7 +51,7 @@ arrows(3, luna.test$conf.int[1], 3, luna.test$conf.int[2], length=0.1, angle=90,
 dev.off()
 
 #2 proportion Z test to see if Dagger differs from Luna
-test = prop.test(x=c(sum(df$dagger),sum(df$luna)), n=c(nrow(df),nrow(df)))
+test = prop.test(x=c(sum(df$luna),sum(df$dagger)+sum(df$caltrop)), n=c(nrow(df),nrow(df)*2), alternative='less')
 print(test)
 
 #plot confidence intervals for proportion of makes based on order
